@@ -3,18 +3,19 @@ import { Then } from '@cucumber/cucumber';
 import checkIsOnPage from '../support/check/checkIsOnPage';
 
 import checkProfile from '../support/check/checkProfile';
+import checkNoProfile from '../support/check/checkNoProfile';
 import checkFormMessage from '../support/check/checkFormMessage';
 import checkGuest from '../support/check/checkGuest';
 import checkURLPath from '../support/check/checkURLPath';
 
 Then(
   /^User can verify their profile data$/,
-  () => checkProfile()
+  checkProfile
 );
 
 Then(
   /^a page loads with all of Mary's Profile information$/,
-  () => checkProfile()
+  checkProfile
 );
 
 Then(
@@ -44,7 +45,7 @@ Then(
 
 Then(
   /^she sees that claims from \/userinfo are disappeared$/,
-  () => checkProfile(true)
+  checkNoProfile
 );
 
 // import checkClass from '../support/check/checkClass';
